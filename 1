@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+    int N, K, s = 0;
+    scanf("%i%i", &N, &K);
+    while (N-1 > 0)
+    {
+    	s += K + 4;
+    	K = K + 4;
+    	N--;
+    }
+    printf("%i\n", s);
+}
+
+
+
+
+
+//рішення за допомогою масиву:
+#include <stdio.h>
+
+int main()
+{
+    int  N, K, s = 0, M[10];
+    scanf("%i%i", &N, &K);
+    M[0] = K;
+    for (int i = 1; i < N; i++)
+    {
+    	M[i] = M[i-1] + 4;
+    	s += M[i];
+    }
+    printf("%i\n", s);
+}
