@@ -1,9 +1,15 @@
+//рішення без масиву
 #include <stdio.h>
 
 int main()
 {
     int N, K, s = 0;
     scanf("%i%i", &N, &K);
+    if (N > 1000 || K > 1000)
+    {
+    	printf("Vvedit inshi N abo K");
+    	return 0;
+	}
     while (N-1 > 0)
     {
     	s += K + 4;
@@ -17,13 +23,18 @@ int main()
 
 
 
-//рішення за допомогою масиву:
+//рішення за допомогою масиву(просто записуємо в масив кількість осіб на кожному поверсі):
 #include <stdio.h>
 
 int main()
 {
-    int  N, K, s = 0, M[10];
+    int  N, K, s = 0, M[N];
     scanf("%i%i", &N, &K);
+    if (N > 1000 || K > 1000)
+    {
+    	printf("Vvedit inshi N abo K");
+    	return 0;
+	}
     M[0] = K;
     for (int i = 1; i < N; i++)
     {
